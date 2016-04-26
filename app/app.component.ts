@@ -5,9 +5,9 @@ import {HeroDetailComponent} from './hero-detail.component';
   selector: 'my-app',
   template:`
     <h1>{{title}}</h1>
-    <h2>My Heroes</h2>
+    <h2>Topics</h2>
     <ul class="heroes">
-      <li *ngFor="#hero of heroes"
+      <li *ngFor="#hero of angularjs2"
         [class.selected]="hero === selectedHero"
         (click)="onSelect(hero)">
         <span class="badge">{{hero.id}}</span> {{hero.name}}
@@ -31,7 +31,7 @@ import {HeroDetailComponent} from './hero-detail.component';
       margin: 0 0 2em 0;
       list-style-type: none;
       padding: 0;
-      width: 10em;
+      width: 30em;
     }
     .heroes li {
       cursor: pointer;
@@ -74,15 +74,16 @@ import {HeroDetailComponent} from './hero-detail.component';
   directives: [HeroDetailComponent]
 })
 export class AppComponent {
-  title = 'Tour of Heroes';
-  heroes = HEROES;
-  selectedHero: Hero;
-  onSelect(hero: Hero) { this.selectedHero = hero; }
+  title = 'List of items for angular2';
+  angularjs2 = Angular2;
+  selectedHero: Topics;
+  onSelect(hero: Topics) { this.selectedHero = hero; }
 }
-var HEROES: Hero[] = [
-  { "id": 11, "name": "Mr. Nice" },
-  { "id": 12, "name": "Narco" },
-  { "id": 13, "name": "Bombasto" },
-  { "id": 14, "name": "Celeritas" },
-  { "id": 15, "name": "Magneta" }
+var Angular2: Topics[] = [
+  { "id": 1, "name": "Template Basics" },
+  { "id": 2, "name": "Template Directives" },
+  { "id": 3, "name": "Filters/Pipes" },
+  { "id": 4, "name": "Controllers/Components" },
+  { "id": 5, "name": "Style sheets" },
+  {"id":6 , "name":"String Data Pipe"}
 ];
